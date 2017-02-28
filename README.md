@@ -1,5 +1,5 @@
 # UÜ MEDYA OYNATICI
-Basit bir medya oynatıcı. Öğrenme ve gelişme amaçlıdır.
+Basit bir medya oynatıcı. Öğrenme ve gelişme amaçlıdır. Python için eğitim PDF'si [buradan](http://indir.istihza.com/belgeler/py3/python3.pdf)
 
 **Bu dosya şu an için geliştiricileri hedeflemektedir.**
 
