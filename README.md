@@ -52,7 +52,130 @@ Veritabnı için basit dosyalar ya da xml teknolojisini kullanabiliriz.
 Kullanacaklarımızı net olarak seçtikten sonra görevleri daha iyi seçebiliriz.
 
 
+<hr />
 
+## Git komutlari:
 
+Bash kabugunu kullananlar icin git komutlari:
 
+### CLONE komutu:
 
+```bash
+git clone <depo linki>
+```
+Depo ilk kez indirilirken kullanilir. Depodaki tum dosyalari yerel dizininize kopyalar. Tum commitler dahil.
+
+### STATUS komutu:
+
+```bash
+git status
+```
+
+Yerel deponunuzda yaptiginiz degisimleri gosterir. 
+
+### ADD komutu:
+
+```bash
+git add <dosya adi>
+```
+
+Yerel deponuzda ismini verdiginiz dosyayi ya da dosyalari ikinci kisma gonderir. Tum dosyalari bie kerede gondermek icin 
+```bash
+git add .
+```
+komutunu kullanabilirsiniz.
+
+### COMMIT komutu:
+
+```bash 
+git commit -m "Mesaj basligi buraya gelir.
+-
+- Mesajin govde kismi burada olusturulur ve
+- tirnak kapanana kadar mesajiniz devam 
+- eder."
+```
+
+Yaptiginiz degisikliklerden **emin oldugunuzda** degisiklikleri git'e bildirmek icin kullanilir. Bu komutla birlikte gormediginiz bir hash tagi olustururlur ve tum porje bu degisiklige geri dondurulebilir. Bu yuzden commit mesajlari oldukca onemlidir ve yapilan degisiklikler detaylica belirtilmelidir.
+
+### LOG komutu:
+
+```bash
+git log
+```
+
+Proje uzerinde yapilan tum degisiklikleri gozlemlemeye yarar. Hash taglarini, commit mesajlarini, commiti kimin gonderdigini ve gonderme zamanini bu komutla ogrenebilirsiniz.  Cikmak icin 'q' tusuna basmalisiniz.
+
+### DIFF komutu:
+
+```bash
+git diff
+```
+
+Yaptiginiz ancak henuz commit etmediginiz degisiklikleri detaylica gosterir. Eger iki dosya icindeki farklari gostermek istiyorsaniz iki dosya yolunu da komuta eklemelisiniz.
+
+### PUSH komutu:
+
+```bash
+git push origin master
+```
+
+Bulundugunuz daldaki degisiklieri kayitli bir uzak sunucu adresi varsa gondermek icin kullanilir.  Bir projeyi clone komutuyla cektiyseniz, cektiginiz klasor otomatik olarak uzak sunucu adresi olarak kaydeldilir. Baska dal icin master ifadesini degistirmeniz gerekir.
+
+### PULL komutu:
+
+```bash
+git pull origin master
+```
+
+Uzak sunucudaki degisiklikleri sizin yerel deponuza uygular. Bu sayede kodlariniz guncel kalir. Ancak sadece yazdiginiz dala degisiklik uygulanir. Varsayilan dal master dalidir. Projenin ana dalidir. Baska dala degisiklik uygulamak icin kodda master kelimesini degistirip istediginiz dali yazmaniz gerekir
+
+### Yeni dal olusturmak ve silmek:
+
+```bash
+git checkout -b Yeni_Fikir
+```
+
+Projeye yeni bir ozellik getirmek icin ya da yaptiginiz degisikliklerden emin olamadinizda yeni bir dal olusturup o dalda calisma yapabilirsiniz. Yeni dali olusturdugunuzda master dalinin kopyasini olusturursunuz. Bu dalda yaptiginiz degisiklikler master dalini etkilemez. Bu yuzden kodlarinizi daha rahat deneyebilirsiniz. 
+
+```bash
+git branch -d Yeni_Fikir
+```
+
+Olusturdugunuz dali siler.
+
+### Kullanilan dali degistirmek:
+
+```bash
+git checkout <DAL>
+```
+
+Mevcut dalinizi degistirmeden yaptiginiz degisiklikler master dalinda kalir.
+
+### Mevcut dali gormek
+
+```bash
+git branch
+```
+
+Tum dallari goruntuler. Mevcut dalinizin solunda * isareti vardir.
+
+### Dalinizi ve daldaki degisimleri uzak sunucuya gondermek
+
+```bash
+git push origin <dal>
+```
+
+Dal henuz acilmamissa acilir ve dosyalar eklenir. Aciksa dosyalar guncellenir.
+
+### Tüm yerel değişiklik ve teslimlerinizi iptal etmek
+
+```bash
+git fetch origin
+```
+
+komutu ile uzak depodaki dosyalari geri alin ve 
+
+```bash
+git reset --hard origin/master
+```
+komutu ile yerel deponuzu resetleyin.
